@@ -1,0 +1,63 @@
+{
+  "name": "Saukatali Masi",
+  "title": "Data Analyst",
+  "contact": {
+    "phone": "+91 9724610429",
+    "location": "Bengaluru",
+    "email": "masisokatali@gmail.com"
+  },
+  "about_me": "I am an IT student specializing in software and web development. I love building logical and user-friendly applications. My goal is to start my career in a reputed organization where I can improve my skills and contribute to the team's success.",
+  "education": [
+    {
+      "year": "2025 - 2027",
+      "degree": "Master of Computer Application",
+      "institution": "Reva University",
+      "details": "Currently pursuing Master of Computer Application at Reva University, focusing on software development, database management, and cloud technologies. Actively improving programming skills through academic projects and practical learning."
+    },
+    {
+      "year": "2022 - 2025",
+      "degree": "Bachelor of Computer Application",
+      "institution": "Sankalchand Patel University",
+      "details": "Learned fundamentals of programming, data structures, and web development. Completed projects using Java, Python, and HTML/CSS. Achieved 8.20 CGPA and developed strong analytical and problem-solving skills."
+    }
+  ],
+  "experience": [
+    {
+      "duration": "Apr - Jun (2025)",
+      "role": "Web Developer Intern",
+      "company": "Aenezz",
+      "details": "Completed 3 months of remote work experience as a Web Developer Intern. Worked on real projects using HTML, CSS, JavaScript, Bootstrap, PHP, and SQL to improve website UI and database functionality. Developed industry-level skills and gained confidence in professional development."
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Java",
+      "Python",
+      "JavaScript",
+      "PHP",
+      "SQL"
+    ],
+    "web_technologies": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Tailwind CSS",
+      "ReactJS",
+      "Node.js"
+    ],
+    "tools_and_technologies": [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "MySQL",
+      "Figma",
+      "REST APIs"
+    ],
+    "soft_skills": [
+      "Teamwork",
+      "Communication",
+      "Problem Solving",
+      "Analytical Thinking"
+    ]
+  }
+}

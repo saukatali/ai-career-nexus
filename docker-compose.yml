@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai_career_nexus_db
+    restart: always
+    environment:
+      POSTGRES_USER: ai_career_user
+      POSTGRES_PASSWORD: SecurePass2024!
+      POSTGRES_DB: ai_career_nexus_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_career_user -d ai_career_nexus_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
