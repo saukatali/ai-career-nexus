@@ -369,18 +369,31 @@ const Dashboard = () => {
 // Components
 const NavItem = ({ icon, label, active, onClick }) => (
   <motion.button
-    whileHover={{ x: 5 }}
+    whileHover={{ x: 8, scale: 1.02 }}
     whileTap={{ scale: 0.95 }}
     onClick={onClick}
-    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${
+    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
       active 
-        ? 'bg-neon-gradient text-white shadow-neon-blue' 
-        : 'text-gray-400 hover:text-white hover:bg-white/5'
+        ? 'bg-neon-blue text-dark-900 shadow-lg shadow-neon-blue/50' 
+        : 'text-gray-400 hover:text-white hover:bg-white/10 hover:shadow-md'
     }`}
   >
-    {icon}
+    <motion.div
+      animate={active ? { rotate: [0, 5, -5, 0] } : {}}
+      transition={{ duration: 0.5 }}
+    >
+      {icon}
+    </motion.div>
     <span className="font-medium">{label}</span>
-    {active && <ChevronRight className="w-4 h-4 ml-auto" />}
+    {active && (
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="ml-auto"
+      >
+        <ChevronRight className="w-4 h-4" />
+      </motion.div>
+    )}
   </motion.button>
 );
 

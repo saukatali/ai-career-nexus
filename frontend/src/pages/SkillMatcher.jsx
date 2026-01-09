@@ -221,7 +221,7 @@ const SkillMatcher = () => {
 
               {/* Skill Input */}
               <div className="relative mb-6">
-                <input
+                <motion.input
                   type="text"
                   value={inputValue}
                   onChange={(e) => {
@@ -233,14 +233,16 @@ const SkillMatcher = () => {
                       handleAddSkill(inputValue);
                     }
                   }}
+                  whileFocus={{ scale: 1.01, borderColor: "rgba(0, 217, 255, 0.5)" }}
+                  transition={{ duration: 0.2 }}
                   placeholder="Type a skill..."
-                  className="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon-blue/50 transition-colors"
+                  className="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon-blue/50 transition-all duration-300"
                 />
                 <motion.button
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.15, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => handleAddSkill(inputValue)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-neon-gradient rounded-lg flex items-center justify-center"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-neon-blue rounded-lg flex items-center justify-center shadow-lg shadow-neon-blue/50"
                 >
                   <Plus className="w-4 h-4" />
                 </motion.button>

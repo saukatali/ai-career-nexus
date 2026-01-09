@@ -341,13 +341,18 @@ const ResumeAnalyzer = () => {
             className="max-w-2xl mx-auto"
           >
             <div className="glass-morph-strong rounded-3xl p-12 border border-white/10 text-center">
-              <div
+              <motion.div
                 onDragEnter={handleDrag}
                 onDragLeave={handleDrag}
                 onDragOver={handleDrag}
                 onDrop={handleDrop}
+                animate={{ 
+                  borderColor: dragActive ? 'rgba(0, 217, 255, 0.8)' : 'rgba(255, 255, 255, 0.12)',
+                  scale: dragActive ? 1.02 : 1
+                }}
+                transition={{ duration: 0.3 }}
                 className={`border-2 border-dashed rounded-2xl p-12 transition-all ${
-                  dragActive ? 'border-neon-blue bg-neon-blue/10' : 'border-white/20'
+                  dragActive ? 'bg-neon-blue/10 shadow-lg shadow-neon-blue/30' : ''
                 }`}
               >
                 <input
@@ -359,14 +364,29 @@ const ResumeAnalyzer = () => {
                 />
                 
                 <motion.div
-                  animate={{ y: analyzing ? 0 : [0, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="w-24 h-24 mx-auto mb-6 bg-neon-blue rounded-full flex items-center justify-center"
+                  animate={{ 
+                    y: analyzing ? 0 : [0, -10, 0],
+                    rotate: analyzing ? 360 : 0
+                  }}
+                  transition={{ 
+                    y: { duration: 2, repeat: Infinity },
+                    rotate: { duration: 1, repeat: analyzing ? Infinity : 0, ease: "linear" }
+                  }}
+                  className="w-24 h-24 mx-auto mb-6 bg-neon-blue rounded-full flex items-center justify-center shadow-lg shadow-neon-blue/50"
                 >
                   {analyzing ? (
-                    <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <motion.div 
+                      className="w-12 h-12 border-4 border-white border-t-transparent rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    />
                   ) : (
-                    <Upload className="w-12 h-12" />
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      <Upload className="w-12 h-12" />
+                    </motion.div>
                   )}
                 </motion.div>
 
@@ -407,7 +427,7 @@ const ResumeAnalyzer = () => {
                     <span className="text-sm text-neon-pink">{error}</span>
                   </div>
                 )}
-              </div>
+              </motion.div>
 
               <div className="mt-8 grid grid-cols-3 gap-4">
                 <div className="glass-morph rounded-xl p-4">

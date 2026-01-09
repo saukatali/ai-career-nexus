@@ -14,12 +14,24 @@
     background: rgba(15, 15, 30, 0.85);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-morph:hover {
+    background: rgba(15, 15, 30, 0.95);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    transform: translateY(-2px);
   }
   
   .glass-morph-strong {
     background: rgba(15, 15, 30, 0.92);
     backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-morph-strong:hover {
+    border: 1px solid rgba(0, 217, 255, 0.4);
   }
   
   .neon-text-blue {
